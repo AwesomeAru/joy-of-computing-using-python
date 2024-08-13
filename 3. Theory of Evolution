@@ -1,0 +1,16 @@
+def evolve(x):
+    index_value = random.randint(0, len(x)-1)
+    p = random.randint(1,100)
+    print(p)
+    if ( p== '0'):
+        if (x[index_value] == '0') :
+            x[index_value] = '1'
+        else:
+            x[index_value] = '0'
+
+with open("file_name.txt") as my_file:
+    x= my_file.read()
+    x = list(x)
+for i in range(0,10000):
+    evolve(x)
+print(x)
