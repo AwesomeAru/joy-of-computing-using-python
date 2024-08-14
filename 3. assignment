@@ -32,3 +32,75 @@ if (b==k):
 else:
     print("b")
 Q 8 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Programming Q 3 
+ori = input("enter the list")
+ori_list = ori.split()
+rev_list = ori_list[::-1]
+print(ori_list)
+print(rev_list)
+for i in range(len(ori_list)):
+    if (i%2 == 1):
+        ori_list[i] = int(rev_list[i]) + int(ori_list[i])
+    else:
+        ori_list[i] = int(ori_list[i])
+print(ori_list)
+
+or 
+
+def process_list(input_list):
+    # Reverse the list
+    reversed_list = input_list[::-1]
+    
+    # Create a new list to store the result
+    result = []
+    
+    # Iterate through the odd indices
+    for i in range(len(input_list)):
+        if i % 2 != 0:  # Check for odd indices
+            sum_value = input_list[i] + reversed_list[i]
+            result.append(sum_value)
+        else:
+            result.append(input_list[i])  # Keep the original value at even indices
+    
+    return result
+
+# Input: a list of integers separated by spaces
+input_data = input()
+input_list = list(map(int, input_data.split()))
+
+# Process the list and get the result
+output_list = process_list(input_list)
+
+# Print the output list
+print(" ".join(map(str, output_list)))
+Q 8 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Programming Q 2
+
+def remove_duplicates(input_list):
+    # Initialize a set to keep track of seen numbers
+    seen = set()
+    unique_numbers = []
+
+    # Iterate through the input list
+    for number in input_list:
+        if number >= 0 and number not in seen:  # Check for non-negative and unseen numbers
+            seen.add(number)  # Add the number to the seen set
+            unique_numbers.append(number)  # Add to the unique numbers list
+
+    return unique_numbers
+
+# Input: a list of numbers separated by spaces
+input_data = input()
+input_list = list(map(int, input_data.split()))
+
+# Process the list to remove duplicates
+output_list = remove_duplicates(input_list)
+
+# Print the output list
+print(" ".join(map(str, output_list)))
+
+
+
+
+
+
