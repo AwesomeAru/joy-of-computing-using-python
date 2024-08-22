@@ -1,0 +1,18 @@
+def magic_sq(n):
+    magicSq = [] #array
+    for i in range(n):
+        l = []
+        for j in range(n):
+            l.append(0)
+        magicSq.append(l)
+        
+    for i in range(n):
+        for j in range(n):
+            print(magicSq[i][j], end = " ") #prints all the values in the list magicSq in a straight line
+        print() #used to enter to a new line/ next row so the next set of values of l (for j = 1) will be printed in a new row then the next like that
+    print(magicSq) 
+    
+    #magic = [0 for i in range(3)] -> this will give us a list with 0 when i is in range(3)
+    #magic = [[0 for i in range(3)] for j in range(3)] _> [[0,0,0][0,0,0][0,0,0]]
+    
+    
