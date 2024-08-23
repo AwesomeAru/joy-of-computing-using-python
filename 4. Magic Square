@@ -6,13 +6,50 @@ def magic_sq(n):
             l.append(0)
         magicSq.append(l)
         
-    for i in range(n):
-        for j in range(n):
-            print(magicSq[i][j], end = " ") #prints all the values in the list magicSq in a straight line
-        print() #used to enter to a new line/ next row so the next set of values of l (for j = 1) will be printed in a new row then the next like that
-    print(magicSq) 
+#    for i in range(n):
+#        for j in range(n):
+#            print(magicSq[i][j], end = " ") #prints all the values in the list magicSq in a straight line
+#        print() #used to enter to a new line/ next row so the next set of values of l (for j = 1) will be printed in a new row then the next like that
+#    print(magicSq) 
     
     #magic = [0 for i in range(3)] -> this will give us a list with 0 when i is in range(3)
     #magic = [[0 for i in range(3)] for j in range(3)] _> [[0,0,0][0,0,0][0,0,0]]
+
+    i = n//2 # // to get the quotient when n is divided by 2 
+    j = n-1 #to get the location of 1 
     
+    num = n*n
+    count = 1 #goes from 1,2,3,4... till n. all the elements in the magicSq
     
+    while (count<=num):
+        if(i==-1 and j==n): #condition 4 
+            i = 0
+            j= n-2
+        else:
+            if(j==n): #column value is exceeding 
+                j = 0
+            if(i < 0):  #row is becoming -1
+                i = n-1
+        if(magicSq[i][j]!=0): #check if it already has something in that location. if yes then ->
+            j = j-2
+            i = i+1
+            continue #it will skip executing whatever is written after this line 
+        else: #meaning this loc is empty
+            magicSq[i][j]= count
+            count +=1 
+            
+        i = i-1
+        j = j+1 #condition 1 
+        
+    for i in range(n):
+        for j in range(n):
+            print(magicSq[i][j], end = " ") #prints all the values in the list magicSq in a straight line
+        print()    #used to enter to a new line/ next row so the next set of values of l (for j = 1) will be printed in a new row then the next like that
+      
+    print("the sum of each row/ column/ diagonal is:" +str((n*(n**2+1))/2))
+      
+magic_sq(7)        
+        
+            
+            
+        
