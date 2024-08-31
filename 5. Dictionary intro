@@ -1,0 +1,17 @@
+#key is unique 
+con_factor = {} #curley braces - dict 
+con_factor['dollar'] = 60 
+con_factor['euro'] = 80 
+print(con_factor) #to print the dict
+con_factor['euro'] #to print the value corresponding to the key 'euro'
+con_factor.keys() #returns the keys 
+list(con_factor.keys()) #returns the keys as list 
+con_factor.values() #returns the values 
+con_factor.items() #lists items in a dict as a tuple
+#to get the list of available functionalities - con_factor + tab key 
+#to get the documentation about a specific funct - eg pop funct then do con_factor.pop?
+#key error comes when the asked key is not in the dict 
+con_factor['dollar'] = 65 #to update a dict same as creating a key and value 
+print(con_factor) #to print the dict
+del con_factor['euro'] #to delete a key
+print(con_factor) #to print the dict
