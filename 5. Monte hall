@@ -5,7 +5,7 @@ doors = [0]*3 #stores the item behind the gate - goat/bmw
 goatdoor = [0]*2 #stores the gate numbers (0,1,2) which have goat behind them 
 swap = 0 #number of swap wins 
 dont_swap = 0 #no of dont swap wins 
-j = 0
+j = 0 
 while(j<10):
     x = random.randint(0,2) #xth door contains the prize - BMW
     doors[x] = "bmw"
