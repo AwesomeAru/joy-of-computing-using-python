@@ -1,0 +1,33 @@
+#flipping the img 
+from PIL import Image
+
+#openning the img
+img = Image.open('obtained.png')
+
+#transposing
+transposed_img = img.transpose(Image.FLIP_LEFT_RIGHT)
+
+#save it to a human readable format
+transposed_img.save('corrected.png')
+
+#--------------------------------------------------------------------------
+
+#image enhancement
+#contrast limited adaptive histogram equalization- CLAHE
+
+import cv2
+
+#read the image
+img = cv2.imread('crime.png')
+
+#preparation for CLAHE
+clahe = cv2.createCLAHE()
+
+#convert gray scale img
+gray_img =cv2.cvtColor(img, cv2.COLOUR_BGR2GRAY)
+
+#apply enhancement
+enh_img = clahe.apply(gray_img)
+
+#save it into a file 
+cv2.imwrite('enhanced.png', enh_img)
