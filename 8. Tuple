@@ -1,0 +1,10 @@
+#tuple
+ice_cream = ("a", "b", "c", "d", "e")
+for letters in ice_cream:
+    print(letters)
+print(ice_cream[2]) #indexing from 0 
+
+#tuple are fixed - immutable, you cannot make changes o delete a sinle element etc
+len(ice_cream)
+ice_cream.count("a")
+ice_cream.index(2)
